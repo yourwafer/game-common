@@ -1,5 +1,21 @@
-group 'otr-as'
-version = '0.1.0-SNAPSHOT'
+group 'com.tw.game.common'
+version = '1.0.0'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+
+        classpath('com.stanfy.spoon:spoon-gradle-plugin:1.2.2') {
+            exclude module: 'guava'
+        }
+        classpath 'com.google.guava:guava:18.0'
+
+    }
+}
 
 allprojects {
     apply plugin: 'java'
