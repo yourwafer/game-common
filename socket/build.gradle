@@ -1,7 +1,7 @@
 group 'com.origin.game.framework'
 version '1.0'
 
-apply plugin: 'java'
+apply from: '../config/quality.gradle'
 
 sourceCompatibility = 1.8
 
@@ -12,5 +12,6 @@ repositories {
 dependencies {
     compile group: 'io.netty', name: 'netty-common', version: '4.1.15.Final'
     compile group: 'io.netty', name: 'netty-handler', version: '4.1.15.Final'
+    compile project(':utils')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

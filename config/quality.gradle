@@ -18,8 +18,8 @@ apply plugin: 'pmd'
  * limitations under the License.
  */
 
-// Add checkstyle, findbugs, pmd and lint to the check task.
-check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'
+// Add checkstyle, findbugs, pmd to the check task.
+check.dependsOn 'checkstyle', 'findbugs', 'pmd'
 
 def configDir = "${project.rootDir}/config/quality"
 def reportsDir = "${project.buildDir}/reports"
@@ -76,17 +76,6 @@ task pmd(type: Pmd) {
         html {
             destination "$reportsDir/pmd/pmd.html"
         }
-    }
-}
-
-android {
-    lintOptions {
-        abortOnError true
-        xmlReport false
-        htmlReport true
-        lintConfig file("$configDir/lint/lint.xml")
-        htmlOutput file("$reportsDir/lint/lint-result.html")
-        xmlOutput file("$reportsDir/lint/lint-result.xml")
     }
 }
 
