@@ -1,14 +1,16 @@
-package com.tw.game.common.socket.core;
+package com.tw.game.common.socket.config.core;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Slf4j
 public class ConfigProperty {
 
     private String bindAddress="127.0.0.1";
@@ -27,11 +29,5 @@ public class ConfigProperty {
 
     private int workThread = Runtime.getRuntime().availableProcessors()/2;
 
-    private int poolMin = 1;
-
-    private int poolMax = Runtime.getRuntime().availableProcessors();
-
-    private int poolIdle = Runtime.getRuntime().availableProcessors()/2;
-
-
+    private int executorThread = Runtime.getRuntime().availableProcessors();
 }
